@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ========================
+   LIGHT MODE — WEGO YEMEN
+   Brand: Cyan #00A8D6 on white
+======================== */
+:root {
+  --cyan: #00A8D6;
+  --cyan-dark: #0082A8;
+  --cyan-light: #E0F6FD;
+  --lime: #7DC400;
+  --blue: #0047FF;
+  --bg: #F0F8FC;
+  --bg-white: #FFFFFF;
+  --bg-alt: #EBF6FB;
+  --card: #FFFFFF;
+  --border: #C5E8F5;
+  --border-light: #DFF1FA;
+  --text: #0D2235;
+  --text-muted: #4A6878;
+  --text-faint: #8AA4B4;
+}
+
+/* ========================
+   RESET
+======================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* ========================
+   HTML & BODY
+======================== */
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  direction: rtl;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  direction: rtl;
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================
+   SCROLLBAR
+======================== */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 3px; }
+
+/* ========================
+   SELECTION
+======================== */
+::selection { background: rgba(0, 168, 214, 0.2); color: var(--text); }
+
+/* ========================
+   GRADIENT TEXT
+======================== */
+.gradient-text {
+  background: linear-gradient(135deg, #00A8D6 0%, #0047FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================
+   CARD
+======================== */
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 2px 20px rgba(0, 100, 160, 0.07);
+}
+
+/* ========================
+   GLOW
+======================== */
+.glow-cyan {
+  box-shadow: 0 4px 30px rgba(0, 168, 214, 0.2);
+}
+
+/* ========================
+   TECH GRID (light)
+======================== */
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(0, 168, 214, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 168, 214, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ========================
+   GRADIENT BORDER HOVER
+======================== */
+.gradient-border {
+  position: relative;
+  background: var(--card);
+  border-radius: 1rem;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  border-radius: 1rem;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gradient-border:hover::before { opacity: 1; }
+
+/* ========================
+   ANIMATIONS
+======================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* ========================
+   BUTTONS
+======================== */
+.btn-primary {
+  background: linear-gradient(135deg, #00A8D6, #0047FF);
+  color: #fff;
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  direction: ltr;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 168, 214, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(0, 168, 214, 0.08);
+  color: var(--cyan-dark);
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 1.5px solid rgba(0, 168, 214, 0.35);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  direction: ltr;
+}
+.btn-secondary:hover {
+  background: rgba(0, 168, 214, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ========================
+   SECTION TITLE PATTERN
+======================== */
+.section-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: var(--cyan-light);
+  padding: 0.3rem 0.9rem;
+  border-radius: 2rem;
+  margin-bottom: 0.75rem;
+}
