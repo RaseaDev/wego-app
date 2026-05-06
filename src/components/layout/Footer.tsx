@@ -34,7 +34,7 @@ export default function Footer() {
             </a>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(255,255,255,0.15)", border: "1.5px solid rgba(255,255,255,0.4)", color: "#fff", fontWeight: 700, padding: "0.8rem 1.75rem", borderRadius: "0.75rem", textDecoration: "none", fontSize: "1rem" }}>
-              <MessageCircle size={18} />
+              <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={18} height={18} />
               تواصل الآن
             </a>
           </div>
@@ -67,7 +67,7 @@ export default function Footer() {
               </a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                 style={{ display: "flex", alignItems: "center", gap: 8, color: "#8AA4B4", textDecoration: "none", fontSize: "0.88rem" }}>
-                <MessageCircle size={15} color="#4CAF50" /> واتساب مباشر
+                <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={15} height={15} /> واتساب مباشر
               </a>
               <a href={MAPS_URL} target="_blank" rel="noopener noreferrer"
                 style={{ display: "flex", alignItems: "center", gap: 8, color: "#8AA4B4", textDecoration: "none", fontSize: "0.88rem" }}>
@@ -83,7 +83,7 @@ export default function Footer() {
               </a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                 style={{ width: 38, height: 38, borderRadius: "0.6rem", background: "rgba(76,175,80,0.15)", border: "1px solid rgba(76,175,80,0.25)", display: "flex", alignItems: "center", justifyContent: "center", color: "#4CAF50", textDecoration: "none" }}>
-                <MessageCircle size={17} />
+                <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={17} height={17} />
               </a>
             </div>
           </div>

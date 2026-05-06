@@ -139,7 +139,7 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
                 whileHover={{ scale: 1.03 }}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-green-500/20 border border-green-500/30 text-green-400 rounded-xl font-bold hover:bg-green-500/30 transition-all"
               >
-                <MessageCircle size={20} />
+                <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={20} height={20} />
                 <span>تواصل عبر واتساب</span>
               </motion.a>
             </motion.div>
@@ -236,7 +236,7 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-green-400 text-sm font-semibold hover:underline"
               >
-                <MessageCircle size={14} />
+                <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={14} height={14} />
                 <span>تواصل معنا عبر واتساب — نحن هنا للمساعدة</span>
               </a>
             </div>

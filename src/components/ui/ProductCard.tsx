@@ -103,7 +103,7 @@ export default function ProductCard({ title, description, image, category, badge
             border: "1px solid #A8E6C0", marginTop: "auto", transition: "all 0.2s",
           }}
         >
-          <MessageCircle size={16} />
+          <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={16} height={16} />
           استفسر عبر واتساب
         </a>
       </div>

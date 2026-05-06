@@ -98,7 +98,7 @@ export default function AppSection() {
                 target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#1A8C45", fontWeight: 700, fontSize: "0.88rem", textDecoration: "none" }}
               >
-                <MessageCircle size={15} /> تحتاج مساعدة؟ تواصل معنا عبر واتساب
+                <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={15} height={15} /> تحتاج مساعدة؟ تواصل معنا عبر واتساب
               </a>
             </div>
           </motion.div>

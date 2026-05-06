@@ -38,44 +38,91 @@ export default function Header() {
     }
   };
 
-  const socialIconClass = "w-9 h-9 rounded-full bg-[#F0F8FC] border border-[#DFF1FA] flex items-center justify-center text-[#00A8D6] transition-all duration-200 hover:bg-[#E0F6FD]";
+  const socialIconStyle = {
+    width: 36, height: 36, borderRadius: "50%",
+    background: "#F0F8FC", border: "1px solid #DFF1FA",
+    display: "flex", alignItems: "center", justifyContent: "center",
+    color: "#00A8D6", transition: "all 0.2s", textDecoration: "none"
+  };
 
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 ${scrolled ? 'bg-white/95 border-b border-[#C5E8F5] shadow-[0_2px_20px_rgba(0,120,180,0.08)]' : 'bg-white/90 border-b border-transparent'}`}
-      style={{ backdropFilter: "blur(16px)" }}
+      style={{
+        position: "fixed", left: 0, right: 0, top: 0, zIndex: 50,
+        width: "100%", transition: "all 0.3s ease",
+        background: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.9)",
+        backdropFilter: "blur(16px)",
+        borderBottom: scrolled ? "1px solid #C5E8F5" : "1px solid transparent",
+        boxShadow: scrolled ? "0 2px 20px rgba(0,120,180,0.08)" : "none",
+      }}
     >
-      <div className="w-full max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-[72px]">
+      <style>{`
+        /* Custom responsive classes to guarantee layout without relying on Tailwind */
+        .desktop-nav { display: flex; gap: 0.25rem; }
+        .desktop-btn { display: inline-flex; }
+        .mobile-toggle { display: none; }
+        .drawer-mobile { display: none; }
+        
+        @media (max-width: 1024px) {
+          .desktop-nav { display: none !important; }
+          .desktop-btn { display: none !important; }
+          .mobile-toggle { display: flex !important; }
+          .drawer-mobile { display: block !important; }
+        }
+        @media (max-width: 640px) {
+          .desktop-logo { display: none !important; }
+        }
+      `}</style>
+
+      <div style={{ width: "100%", maxWidth: 1280, margin: "0 auto", padding: "0 1rem" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
 
           {/* Logo — rightmost in RTL */}
-          <Link href="/" className="flex items-center gap-2.5 no-underline">
-            <div className="w-[42px] h-[42px] rounded-lg overflow-hidden shrink-0">
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
+            <div style={{ width: 42, height: 42, borderRadius: 10, overflow: "hidden", flexShrink: 0 }}>
               <Image
                 src="/images/شعار ويجو للتطبيق (1).png"
                 alt="ويجو يمن"
                 width={42}
                 height={42}
-                className="object-cover"
+                style={{ objectFit: "cover" }}
               />
             </div>
             {/* Hidden on small mobile, visible on sm and up */}
-            <div className="hidden sm:block text-right">
-              <p className="text-[#0D2235] font-black text-[1.05rem] leading-[1.2]">ويجو يمن</p>
-              <p className="text-[#00A8D6] text-[0.75rem] font-semibold">Wego Yemen</p>
+            <div className="desktop-logo" style={{ textAlign: "right" }}>
+              <p style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.05rem", lineHeight: 1.2 }}>ويجو يمن</p>
+              <p style={{ color: "#00A8D6", fontSize: "0.75rem", fontWeight: 600 }}>Wego Yemen</p>
             </div>
           </Link>
 
           {/* Desktop Nav — center (Hidden below lg) */}
-          <nav className="hidden lg:flex gap-1">
+          <nav className="desktop-nav">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="bg-transparent border-none cursor-pointer py-2 px-4 rounded-full text-[#4A6878] font-bold text-[0.95rem] transition-all duration-200 hover:text-[#00A8D6] hover:bg-[#E0F6FD]"
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "2rem",
+                  color: "#4A6878",
+                  fontWeight: 700,
+                  fontSize: "0.95rem",
+                  transition: "all 0.2s",
+                }}
+                onMouseEnter={e => {
+                  (e.target as HTMLElement).style.color = "#00A8D6";
+                  (e.target as HTMLElement).style.background = "#E0F6FD";
+                }}
+                onMouseLeave={e => {
+                  (e.target as HTMLElement).style.color = "#4A6878";
+                  (e.target as HTMLElement).style.background = "transparent";
+                }}
               >
                 {link.label}
               </button>
@@ -83,17 +130,17 @@ export default function Header() {
           </nav>
 
           {/* CTAs & Socials — leftmost in RTL */}
-          <div className="flex items-center gap-2">
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             
             {/* Social Icons row (visible on all screens like SAM4G example) */}
-            <div className="flex items-center gap-[0.4rem]">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={socialIconClass}>
-                <MessageCircle size={17} />
+            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" style={socialIconStyle}>
+                <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={17} height={17} />
               </a>
-              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className={`${socialIconClass} hidden xs:flex`}>
+              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" style={socialIconStyle}>
                 <Globe size={17} />
               </a>
-              <a href={PHONE_TEL} className={socialIconClass}>
+              <a href={PHONE_TEL} style={socialIconStyle}>
                 <Phone size={17} />
               </a>
             </div>
@@ -101,16 +148,23 @@ export default function Header() {
             {/* Desktop Download Button */}
             <a
               href="/download"
-              className="btn-primary hidden lg:inline-flex px-5 py-[0.55rem] text-[0.9rem] rounded-full mr-2"
+              className="btn-primary desktop-btn"
+              style={{ padding: "0.55rem 1.25rem", fontSize: "0.9rem", borderRadius: "2rem", marginRight: "0.5rem" }}
             >
-              <Download size={16} className="ml-1" />
+              <Download size={16} style={{ marginLeft: "0.25rem" }} />
               تحميل التطبيق
             </a>
 
             {/* Mobile Menu Toggle (Visible below lg) */}
             <button
               onClick={() => setOpen(!open)}
-              className="lg:hidden bg-[#E0F6FD] border border-[#C5E8F5] rounded-[0.6rem] p-2 cursor-pointer text-[#00A8D6] flex items-center justify-center mr-1"
+              className="mobile-toggle"
+              style={{
+                background: "#E0F6FD", border: "1px solid #C5E8F5",
+                borderRadius: "0.6rem", padding: "0.5rem", cursor: "pointer",
+                color: "#00A8D6", alignItems: "center", justifyContent: "center",
+                marginRight: "0.25rem"
+              }}
             >
               {open ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -128,7 +182,12 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 top-[72px] bg-black/40 backdrop-blur-[4px] z-40 lg:hidden"
+              className="drawer-mobile"
+              style={{
+                position: "fixed", inset: 0, top: 72,
+                background: "rgba(0,0,0,0.4)", backdropFilter: "blur(4px)",
+                zIndex: 40,
+              }}
             />
             {/* Drawer */}
             <motion.div
@@ -136,27 +195,40 @@ export default function Header() {
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute top-[72px] left-0 right-0 bg-white border-b border-[#C5E8F5] shadow-[0_10px_40px_rgba(0,120,180,0.15)] z-50 rounded-b-3xl overflow-hidden lg:hidden"
+              className="drawer-mobile"
+              style={{
+                position: "absolute", top: 72, left: 0, right: 0,
+                background: "#fff", borderBottom: "1px solid #C5E8F5",
+                boxShadow: "0 10px 40px rgba(0,120,180,0.15)",
+                zIndex: 50, borderBottomLeftRadius: "1.5rem", borderBottomRightRadius: "1.5rem",
+                overflow: "hidden"
+              }}
             >
-              <div className="p-6 flex flex-col gap-2">
+              <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {navLinks.map((link) => (
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href)}
-                    className="text-right bg-[#F8FCFF] border border-[#E0F6FD] py-4 px-5 rounded-2xl text-[#0D2235] font-extrabold text-[1.05rem] cursor-pointer w-full flex items-center justify-between"
+                    style={{
+                      textAlign: "right", background: "#F8FCFF", border: "1px solid #E0F6FD",
+                      padding: "1rem 1.25rem", borderRadius: "1rem",
+                      color: "#0D2235", fontWeight: 800, fontSize: "1.05rem",
+                      cursor: "pointer", width: "100%", display: "flex", alignItems: "center",
+                      justifyContent: "space-between"
+                    }}
                   >
                     {link.label}
-                    <span className="text-[#00A8D6] text-xl">‹</span>
+                    <span style={{ color: "#00A8D6", fontSize: "1.2rem" }}>‹</span>
                   </button>
                 ))}
                 
-                <div className="flex gap-3 pt-4 mt-2 border-t border-dashed border-[#DFF1FA]">
+                <div style={{ display: "flex", gap: "0.75rem", paddingTop: "1rem", marginTop: "0.5rem", borderTop: "1px dashed #DFF1FA" }}>
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-                    className="btn-secondary flex-1 py-[0.85rem] rounded-2xl justify-center">
-                    <MessageCircle size={18} className="ml-1" /> واتساب
+                    className="btn-secondary" style={{ flex: 1, padding: "0.85rem", borderRadius: "1rem", justifyContent: "center" }}>
+                    <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={18} height={18} style={{ marginLeft: "0.25rem" }} /> واتساب
                   </a>
-                  <a href={APK_URL} download className="btn-primary flex-1 py-[0.85rem] rounded-2xl justify-center">
-                    <Download size={18} className="ml-1" /> تحميل APK
+                  <a href={APK_URL} download className="btn-primary" style={{ flex: 1, padding: "0.85rem", borderRadius: "1rem", justifyContent: "center" }}>
+                    <Download size={18} style={{ marginLeft: "0.25rem" }} /> تحميل APK
                   </a>
                 </div>
               </div>
@@ -164,12 +236,6 @@ export default function Header() {
           </>
         )}
       </AnimatePresence>
-      <style>{`
-        @media (max-width: 380px) {
-          .xs\\:flex { display: flex; }
-          .hidden.xs\\:flex { display: none; }
-        }
-      `}</style>
     </motion.header>
   );
 }
