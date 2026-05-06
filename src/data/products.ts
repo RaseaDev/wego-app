@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    name: "مودم ويجو 4G",
+    name: "مودم ويقو  4G",
     nameEn: "Wego 4G Modem",
     category: "modems",
     categoryLabel: "مودمات 4G",
@@ -53,7 +53,7 @@ export const products = [
     nameEn: "Exclusive Offers",
     category: "offers",
     categoryLabel: "عروض",
-    description: "عروض وخصومات خاصة لعملاء ويجو يمن",
+    description: "عروض وخصومات خاصة لعملاء ويقو  يمن",
     features: ["خصم حتى 30%", "عروض موسمية", "مكافآت الولاء"],
     image: "/images/670059288_122125382907071300_4766707980921724255_n.jpg",
     badge: "عرض محدود",
@@ -65,7 +65,7 @@ export const products = [
     nameEn: "Internet Packages",
     category: "modems",
     categoryLabel: "مودمات 4G",
-    description: "باقات إنترنت مخصصة مع مودمات ويجو 4G",
+    description: "باقات إنترنت مخصصة مع مودمات ويقو  4G",
     features: ["سرعة عالية", "أسعار مناسبة", "دعم فني مستمر"],
     image: "/images/671767265_122125763067071300_8482572544911010138_n.jpg",
     badge: null,

@@ -19,19 +19,19 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://wegoyemen.com"),
   title: {
-    default: "ويجو يمن | Wego Yemen — موبايلات، مودمات 4G، إكسسوارات وصيانة",
-    template: "%s | ويجو يمن - Wego Yemen",
+    default: "ويقو  يمن | Wego Yemen — موبايلات، مودمات 4G، إكسسوارات وصيانة",
+    template: "%s | ويقو  يمن - Wego Yemen",
   },
   description:
-    "ويجو يمن — أفضل متجر للتقنيات والإلكترونيات في صنعاء، اليمن. موبايلات، مودمات 4G، إكسسوارات، وخدمات صيانة احترافية. حمّل تطبيقنا الآن!",
+    "ويقو  يمن — أفضل متجر للتقنيات والإلكترونيات في صنعاء، اليمن. موبايلات، مودمات 4G، إكسسوارات، وخدمات صيانة احترافية. حمّل تطبيقنا الآن!",
   keywords: [
     "Wego Yemen",
-    "ويجو يمن",
+    "ويقو  يمن",
     "موبايلات اليمن",
     "مودم 4G اليمن",
     "إكسسوارات موبايل",
     "صيانة موبايل صنعاء",
-    "تطبيق ويجو",
+    "تطبيق ويقو ",
     "Wego 4G",
     "Yemen electronics",
     "Sanaa tech store",
@@ -68,22 +68,22 @@ export const metadata: Metadata = {
     locale: "ar_YE",
     alternateLocale: "en_US",
     url: "https://wegoyemen.com",
-    siteName: "ويجو يمن | Wego Yemen",
-    title: "ويجو يمن | Wego Yemen — التقنية بين يديك",
+    siteName: "ويقو  يمن | Wego Yemen",
+    title: "ويقو  يمن | Wego Yemen — التقنية بين يديك",
     description:
-      "أفضل متجر للتقنيات والإلكترونيات في اليمن. حمّل تطبيق ويجو الآن لاكتشاف أحدث الموبايلات.",
+      "أفضل متجر للتقنيات والإلكترونيات في اليمن. حمّل تطبيق ويقو  الآن لاكتشاف أحدث الموبايلات.",
     images: [
       {
         url: "/images/شعار ويجو للتطبيق (1).png",
         width: 512,
         height: 512,
-        alt: "شعار ويجو يمن",
+        alt: "شعار ويقو  يمن",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ويجو يمن | Wego Yemen",
+    title: "ويقو  يمن | Wego Yemen",
     description: "التقنية بين يديك — موبايلات، مودمات 4G، وصيانة في صنعاء",
     images: ["/images/خلفية للتطبيق copy.png"],
   },
@@ -108,7 +108,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ElectronicsStore",
-    name: "ويجو يمن | Wego Yemen",
+    name: "ويقو  يمن | Wego Yemen",
     alternateName: "Wego Yemen",
     description:
       "أفضل متجر للتقنيات والإلكترونيات في صنعاء، اليمن. موبايلات، مودمات 4G، إكسسوارات وصيانة احترافية.",
@@ -159,6 +159,7 @@ export default function RootLayout({
       lang="ar"
       dir="rtl"
       className={`${notoKufiArabic.variable} ${inter.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -174,6 +175,7 @@ export default function RootLayout({
       <body
         className={`${notoKufiArabic.className} antialiased`}
         style={{ background: "#F0F8FC", direction: "rtl", width: "100%", overflowX: "clip" }}
+        suppressHydrationWarning
       >
         {children}
       </body>

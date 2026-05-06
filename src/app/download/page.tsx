@@ -4,12 +4,12 @@ import DownloadClient from "./DownloadClient";
 import { APK_URL, APK_VERSION, APK_SIZE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "تحميل تطبيق ويجو يمن | Download Wego Yemen App",
+  title: "تحميل تطبيق ويقو  يمن | Download Wego Yemen App",
   description:
-    "حمّل تطبيق ويجو يمن للأندرويد مجاناً. تسوق أحدث الموبايلات، مودمات 4G، والإلكترونيات من أي مكان في اليمن مع تطبيق ويجو يمن.",
+    "حمّل تطبيق ويقو  يمن للأندرويد مجاناً. تسوق أحدث الموبايلات، مودمات 4G، والإلكترونيات من أي مكان في اليمن مع تطبيق ويقو  يمن.",
   openGraph: {
-    title: "تحميل تطبيق ويجو يمن | Download Wego App",
-    description: "حمّل تطبيق ويجو يمن للأندرويد مجاناً واستمتع بتجربة تسوق فريدة للموبايلات والإلكترونيات.",
+    title: "تحميل تطبيق ويقو  يمن | Download Wego App",
+    description: "حمّل تطبيق ويقو  يمن للأندرويد مجاناً واستمتع بتجربة تسوق فريدة للموبايلات والإلكترونيات.",
     url: "https://wegoyemen.com/download",
   },
 };

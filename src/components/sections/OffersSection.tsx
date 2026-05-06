@@ -15,7 +15,7 @@ export default function OffersSection() {
           <h2 style={{ fontSize: "clamp(1.5rem,4vw,2.2rem)", fontWeight: 900, color: "#0D2235", marginTop: 8 }}>
             أحدث العروض والتخفيضات
           </h2>
-          <p style={{ color: "#4A6878", marginTop: 8 }}>عروض حصرية لعملاء ويجو يمن — محدودة الوقت!</p>
+          <p style={{ color: "#4A6878", marginTop: 8 }}>عروض حصرية لعملاء ويقو  يمن — محدودة الوقت!</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem" }} className="offers-grid">

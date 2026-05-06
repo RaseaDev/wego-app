@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Download, ArrowLeft } from "lucide-react";
 import { APK_URL } from "@/lib/constants";
@@ -73,7 +74,7 @@ export default function Hero() {
             <motion.p variants={item}
               style={{ fontSize: "clamp(1.2rem, 3vw, 1.75rem)", fontWeight: 700, color: "#4A6878", marginBottom: "1rem" }}
             >
-              مع <span style={{ color: "#00A8D6" }}>ويجو يمن</span>
+              مع <span style={{ color: "#00A8D6" }}>ويقو  يمن</span>
             </motion.p>
 
             <motion.p variants={item}
@@ -84,10 +85,10 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={item} style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", }}>
-              <a href="/download" className="btn-primary" style={{ fontSize: "1rem", padding: "0.9rem 1.75rem" }} id="hero-download">
+              <Link href="/download" className="btn-primary" style={{ fontSize: "1rem", padding: "0.9rem 1.75rem", textDecoration: "none" }} id="hero-download">
                 <Download size={18} />
                 تحميل التطبيق مجاناً
-              </a>
+              </Link>
               {/* <button
                 onClick={() => document.querySelector("#products")?.scrollIntoView({ behavior: "smooth" })}
                 className="btn-secondary"
@@ -145,14 +146,14 @@ export default function Hero() {
                 <div style={{ width: 160, height: 160, borderRadius: "1rem", overflow: "hidden", margin: "0 auto 1rem" }}>
                   <Image
                     src="/images/خلفية للتطبيق copy.png"
-                    alt="تطبيق ويجو يمن"
+                    alt="تطبيق ويقو  يمن"
                     width={160}
                     height={160}
                     style={{ objectFit: "cover", width: "100%", height: "100%" }}
                     priority
                   />
                 </div>
-                <p style={{ fontWeight: 800, color: "#0D2235", fontSize: "1.05rem" }}>ويجو يمن</p>
+                <p style={{ fontWeight: 800, color: "#0D2235", fontSize: "1.05rem" }}>ويقو  يمن</p>
                 <p style={{ color: "#00A8D6", fontWeight: 600, fontSize: "0.85rem", marginTop: 4 }}>التطبيق الأول للتقنية في اليمن</p>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginTop: 12, fontSize: "0.78rem", color: "#8AA4B4" }}>
                   <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#4CAF50", animation: "pulse 2s infinite" }} />

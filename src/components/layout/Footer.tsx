@@ -21,7 +21,7 @@ export default function Footer() {
       <div style={{ background: "linear-gradient(135deg, #00A8D6, #0047FF)", padding: "2.5rem 1.5rem", textAlign: "center" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <h2 style={{ color: "#fff", fontSize: "clamp(1.3rem,4vw,2rem)", fontWeight: 900, marginBottom: "0.5rem" }}>
-            جاهز للبدء مع ويجو يمن؟
+            جاهز للبدء مع ويقو  يمن؟
           </h2>
           <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: "1.5rem", fontSize: "1rem" }}>
             حمّل التطبيق الآن واستمتع بأفضل عروض التقنية في اليمن
@@ -52,7 +52,7 @@ export default function Footer() {
                 <Image src="/images/شعار ويجو للتطبيق (1).png" alt="ويجو يمن" width={44} height={44} style={{ objectFit: "cover" }} />
               </div>
               <div>
-                <p style={{ fontWeight: 800, color: "#fff", fontSize: "1rem" }}>ويجو يمن</p>
+                <p style={{ fontWeight: 800, color: "#fff", fontSize: "1rem" }}>ويقو  يمن</p>
                 <p style={{ color: "#00A8D6", fontSize: "0.75rem" }}>Wego Yemen</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function Footer() {
             {/* Contact */}
             <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               <a href={PHONE_TEL} style={{ display: "flex", alignItems: "center", gap: 8, color: "#8AA4B4", textDecoration: "none", fontSize: "0.88rem" }}>
-                <Phone size={15} color="#00A8D6" /> {PHONE_DISPLAY}
+                <Phone size={15} color="#00A8D6" /> <span dir="ltr" style={{ unicodeBidi: "embed" }}>{PHONE_DISPLAY}</span>
               </a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                 style={{ display: "flex", alignItems: "center", gap: 8, color: "#8AA4B4", textDecoration: "none", fontSize: "0.88rem" }}>
@@ -109,7 +109,7 @@ export default function Footer() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.0!2d44.2!3d15.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDIxJzAwLjAiTiA0NMKwMTInMDAuMCJF!5e0!3m2!1sar!2sye!4v1234567890"
                 width="100%" height="150" style={{ border: 0, display: "block" }}
                 loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade"
-                title="موقع ويجو يمن — صنعاء"
+                title="موقع ويقو  يمن — صنعاء"
               />
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginTop: "2rem", paddingTop: "1.25rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.5rem" }}>
           <p style={{ color: "#8AA4B4", fontSize: "0.8rem" }}>
-            © 2025 ويجو يمن — جميع الحقوق محفوظة
+            © 2025 ويقو  يمن — جميع الحقوق محفوظة
           </p>
           {/* <p style={{ color: "#8AA4B4", fontSize: "0.8rem" }}>
             صُنع بـ ❤️ في اليمن

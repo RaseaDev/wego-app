@@ -19,7 +19,7 @@ export default function ProductsGrid() {
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <span className="section-label">تشكيلتنا</span>
           <h2 style={{ fontSize: "clamp(1.5rem,4vw,2.2rem)", fontWeight: 900, color: "#0D2235", marginTop: 8 }}>
-            منتجات وخدمات <span className="gradient-text">ويجو يمن</span>
+            منتجات وخدمات <span className="gradient-text">ويقو  يمن</span>
           </h2>
           <p style={{ color: "#4A6878", marginTop: 8 }}>اختر من بين أفضل المنتجات التقنية المتاحة في اليمن بأسعار تنافسية وجودة مضمونة</p>
         </div>

@@ -20,7 +20,7 @@ export const GOOGLE_MAPS_URL =
   "https://maps.google.com/?q=صنعاء,+اليمن";
 
 // Company Info
-export const COMPANY_NAME_AR = "ويجو يمن";
+export const COMPANY_NAME_AR = "ويقو  يمن";
 export const COMPANY_NAME_EN = "Wego Yemen";
 export const COMPANY_TAGLINE_AR = "التقنية بين يديك";
 export const COMPANY_TAGLINE_EN = "Technology at Your Fingertips";

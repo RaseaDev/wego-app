@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Truck, Headphones, Tag } from "lucide-react";
 
 const features = [
-  { icon: ShieldCheck, title: "ضمان الجودة",   desc: "جميع منتجاتنا أصلية 100٪ مع ضمان الشركة",          color: "#00A8D6", bg: "#E0F6FD" },
-  { icon: Truck,       title: "توصيل سريع",    desc: "توصيل داخل صنعاء وجميع محافظات اليمن",             color: "#0047FF", bg: "#E8EEFF" },
-  { icon: Headphones,  title: "دعم فني متواصل", desc: "فريق متخصص لدعمك على مدار الساعة",                 color: "#7DC400", bg: "#F0FAE0" },
-  { icon: Tag,         title: "أسعار تنافسية",  desc: "أفضل الأسعار في السوق اليمني مع عروض مستمرة",       color: "#FF7A00", bg: "#FFF3E8" },
+  { icon: ShieldCheck, title: "ضمان الجودة", desc: "جميع منتجاتنا أصلية 100٪ مع ضمان الشركة", color: "#00A8D6", bg: "#E0F6FD" },
+  { icon: Truck, title: "توصيل سريع", desc: "توصيل داخل صنعاء وجميع محافظات اليمن", color: "#0047FF", bg: "#E8EEFF" },
+  { icon: Headphones, title: "دعم فني متواصل", desc: "فريق متخصص لدعمك على مدار الساعة", color: "#7DC400", bg: "#F0FAE0" },
+  { icon: Tag, title: "أسعار تنافسية", desc: "أفضل الأسعار في السوق اليمني مع عروض مستمرة", color: "#FF7A00", bg: "#FFF3E8" },
 ];
 
 export default function FeaturesStrip() {
@@ -15,7 +15,7 @@ export default function FeaturesStrip() {
     <section style={{ background: "#fff", padding: "4rem 0", width: "100%" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 1.5rem" }}>
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
-          <span className="section-label">لماذا ويجو؟</span>
+          <span className="section-label">لماذا ويقو ؟</span>
           <h2 style={{ fontSize: "clamp(1.5rem,4vw,2.2rem)", fontWeight: 900, color: "#0D2235", marginTop: 8 }}>
             ميزاتنا التي <span className="gradient-text">تميزنا</span>
           </h2>

@@ -9,8 +9,8 @@ import { WHATSAPP_URL, APK_URL, FACEBOOK_URL, PHONE_TEL } from "@/lib/constants"
 
 const navLinks = [
   { label: "الرئيسية", href: "/" },
-  { label: "المنتجات", href: "/#products" },
-  { label: "الخدمات", href: "/#services" },
+  // { label: "المنتجات", href: "/#products" },
+  // { label: "الخدمات", href: "/#services" },
   { label: "التطبيق", href: "/#app" },
 ];
 
@@ -93,7 +93,7 @@ export default function Header() {
             </div>
             {/* Hidden on small mobile, visible on sm and up */}
             <div className="desktop-logo" style={{ textAlign: "right" }}>
-              <p style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.05rem", lineHeight: 1.2 }}>ويجو يمن</p>
+              <p style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.05rem", lineHeight: 1.2 }}>ويقو  يمن</p>
               <p style={{ color: "#00A8D6", fontSize: "0.75rem", fontWeight: 600 }}>Wego Yemen</p>
             </div>
           </Link>
@@ -131,7 +131,7 @@ export default function Header() {
 
           {/* CTAs & Socials — leftmost in RTL */}
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            
+
             {/* Social Icons row (visible on all screens like SAM4G example) */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" style={socialIconStyle}>
@@ -146,14 +146,14 @@ export default function Header() {
             </div>
 
             {/* Desktop Download Button */}
-            <a
+            <Link
               href="/download"
               className="btn-primary desktop-btn"
-              style={{ padding: "0.55rem 1.25rem", fontSize: "0.9rem", borderRadius: "2rem", marginRight: "0.5rem" }}
+              style={{ padding: "0.55rem 1.25rem", fontSize: "0.9rem", borderRadius: "2rem", marginRight: "0.5rem", textDecoration: "none" }}
             >
               <Download size={16} style={{ marginLeft: "0.25rem" }} />
               تحميل التطبيق
-            </a>
+            </Link>
 
             {/* Mobile Menu Toggle (Visible below lg) */}
             <button
@@ -221,7 +221,7 @@ export default function Header() {
                     <span style={{ color: "#00A8D6", fontSize: "1.2rem" }}>‹</span>
                   </button>
                 ))}
-                
+
                 <div style={{ display: "flex", gap: "0.75rem", paddingTop: "1rem", marginTop: "0.5rem", borderTop: "1px dashed #DFF1FA" }}>
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                     className="btn-secondary" style={{ flex: 1, padding: "0.85rem", borderRadius: "1rem", justifyContent: "center" }}>
