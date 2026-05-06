@@ -7,7 +7,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
 const services = [
   {
     icon: Wifi, title: "مودمات 4G ذكية",
-    desc: "مودم ويقو  4G — الحل الأمثل للإنترنت في اليمن. تقنية USB plug-and-play، لا تعقيد ولا إعدادات.",
+    desc: "مودم ويقو تكنولوجي 4G — الحل الأمثل للإنترنت في اليمن. تقنية USB plug-and-play، لا تعقيد ولا إعدادات.",
     features: ["تقنية 4G LTE", "USB plug-and-play", "تغطية واسعة", "متوافق مع جميع الشبكات"],
     badge: "الأكثر طلباً", color: "#00A8D6", bg: "#E0F6FD", border: "#B3E5F7",
   },

@@ -1,6 +1,6 @@
-# ويقو  يمن | Wego Yemen Website
+#ويقو تكنولوجي| Wego Yemen Website
 
-موقع ويقو  يمن الرسمي — بُني بـ Next.js 14 + TypeScript + Tailwind CSS + Framer Motion
+موقعويقو تكنولوجيالرسمي — بُني بـ Next.js 14 + TypeScript + Tailwind CSS + Framer Motion
 
 ## 🚀 بدء التطوير المحلي
 

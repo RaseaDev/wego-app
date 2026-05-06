@@ -30,7 +30,7 @@ const installSteps = [
   { icon: Download, title: "حمّل الملف", desc: "اضغط زر التحميل أدناه" },
   { icon: Settings, title: "فعّل المصادر", desc: 'الإعدادات → الأمان → "مصادر غير معروفة"' },
   { icon: Smartphone, title: "ثبّت التطبيق", desc: "افتح ملف APK واضغط تثبيت" },
-  { icon: CheckCircle, title: "ابدأ الاستخدام", desc: "افتح ويجو يمن واستمتع!" },
+  { icon: CheckCircle, title: "ابدأ الاستخدام", desc: "افتح ويقو تكنولوجي واستمتع!" },
 ];
 
 export default function DownloadClient({ device, apkUrl, version, size }: Props) {
@@ -144,7 +144,7 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
                 التطبيق متاح حالياً لأجهزة أندرويد فقط. تواصل معنا عبر واتساب لأي استفسار.
               </p>
               <motion.a
-                href={`${WHATSAPP_URL}?text=مرحباً، أريد الاستفسار عن تطبيق ويجو يمن لنظام iOS`}
+                href={`${WHATSAPP_URL}?text=مرحباً، أريد الاستفسار عن تطبيق ويقو تكنولوجي لنظام iOS`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}

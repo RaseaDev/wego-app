@@ -85,7 +85,7 @@ export default function Header() {
             <div style={{ width: 42, height: 42, borderRadius: 10, overflow: "hidden", flexShrink: 0 }}>
               <Image
                 src="/images/شعار ويجو للتطبيق (1).png"
-                alt="ويجو يمن"
+                alt="ويقو تكنولوجي"
                 width={42}
                 height={42}
                 style={{ objectFit: "cover" }}
@@ -93,8 +93,8 @@ export default function Header() {
             </div>
             {/* Hidden on small mobile, visible on sm and up */}
             <div className="desktop-logo" style={{ textAlign: "right" }}>
-              <p style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.05rem", lineHeight: 1.2 }}>ويقو  يمن</p>
-              <p style={{ color: "#00A8D6", fontSize: "0.75rem", fontWeight: 600 }}>Wego Yemen</p>
+              <p style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.05rem", lineHeight: 1.2 }}>ويقو تكنولوجي</p>
+              <p style={{ color: "#00A8D6", fontSize: "0.75rem", fontWeight: 600 }}>Wego Technology</p>
             </div>
           </Link>
 

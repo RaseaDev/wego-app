@@ -10,7 +10,7 @@ const steps = [
   { n: 1, icon: Download,      title: "تحميل الملف",           desc: 'اضغط على زر "تحميل التطبيق" أدناه' },
   { n: 2, icon: Settings,      title: "السماح بمصادر غير معروفة", desc: 'الإعدادات → الأمان → فعّل "مصادر غير معروفة"' },
   { n: 3, icon: Smartphone,    title: "تثبيت التطبيق",         desc: "افتح ملف APK من مدير الملفات واضغط تثبيت" },
-  { n: 4, icon: CheckCircle,   title: "ابدأ الاستخدام",        desc: "افتح التطبيق واستمتع بكل مزايا ويجو يمن!" },
+  { n: 4, icon: CheckCircle,   title: "ابدأ الاستخدام",        desc: "افتح التطبيق واستمتع بكل مزايا ويقو تكنولوجي!" },
 ];
 
 export default function AppSection() {
@@ -23,7 +23,7 @@ export default function AppSection() {
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <span className="section-label">📱 التطبيق</span>
           <h2 style={{ fontSize: "clamp(1.5rem,4vw,2.2rem)", fontWeight: 900, color: "#0D2235", marginTop: 8 }}>
-            حمّل تطبيق <span className="gradient-text">ويجو يمن</span>
+            حمّل تطبيق <span className="gradient-text">ويقو تكنولوجي</span>
           </h2>
           <p style={{ color: "#4A6878", marginTop: 8 }}>تطبيق أندرويد مجاني — استعرض المنتجات، تواصل معنا، وأكثر</p>
         </div>

@@ -19,28 +19,28 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://wegoyemen.com"),
   title: {
-    default: "ويقو  يمن | Wego Yemen — موبايلات، مودمات 4G، إكسسوارات وصيانة",
-    template: "%s | ويقو  يمن - Wego Yemen",
+    default: "ويقو تكنولوجي | Wego Technology — موبايلات، مودمات 4G، إكسسوارات وصيانة",
+    template: "%s | ويقو تكنولوجي - Wego Technology",
   },
   description:
-    "ويقو  يمن — أفضل متجر للتقنيات والإلكترونيات في صنعاء، اليمن. موبايلات، مودمات 4G، إكسسوارات، وخدمات صيانة احترافية. حمّل تطبيقنا الآن!",
+    "ويقو تكنولوجي — أفضل متجر للتقنيات والإلكترونيات في صنعاء، اليمن. موبايلات، مودمات 4G، إكسسوارات، وخدمات صيانة احترافية. حمّل تطبيقنا الآن!",
   keywords: [
-    "Wego Yemen",
-    "ويقو  يمن",
+    "Wego Technology",
+    "ويقو تكنولوجي",
     "موبايلات اليمن",
     "مودم 4G اليمن",
     "إكسسوارات موبايل",
     "صيانة موبايل صنعاء",
-    "تطبيق ويقو ",
+    "تطبيق ويقو تكنولوجي",
     "Wego 4G",
     "Yemen electronics",
     "Sanaa tech store",
     "أفضل متجر إلكترونيات في اليمن",
     "هواتف ذكية صنعاء"
   ],
-  authors: [{ name: "Wego Yemen", url: "https://wegoyemen.com" }],
-  creator: "Wego Yemen",
-  publisher: "Wego Yemen",
+  authors: [{ name: "Wego Technology", url: "https://wegoyemen.com" }],
+  creator: "Wego Technology",
+  publisher: "Wego Technology",
   formatDetection: {
     email: false,
     address: false,
@@ -68,22 +68,22 @@ export const metadata: Metadata = {
     locale: "ar_YE",
     alternateLocale: "en_US",
     url: "https://wegoyemen.com",
-    siteName: "ويقو  يمن | Wego Yemen",
-    title: "ويقو  يمن | Wego Yemen — التقنية بين يديك",
+    siteName: "ويقو تكنولوجي | Wego Technology",
+    title: "ويقو تكنولوجي | Wego Technology — التقنية بين يديك",
     description:
-      "أفضل متجر للتقنيات والإلكترونيات في اليمن. حمّل تطبيق ويقو  الآن لاكتشاف أحدث الموبايلات.",
+      "أفضل متجر للتقنيات والإلكترونيات في اليمن. حمّل تطبيق ويقو تكنولوجي الآن لاكتشاف أحدث الموبايلات.",
     images: [
       {
         url: "/images/شعار ويجو للتطبيق (1).png",
         width: 512,
         height: 512,
-        alt: "شعار ويقو  يمن",
+        alt: "شعار ويقو تكنولوجي",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ويقو  يمن | Wego Yemen",
+    title: "ويقو تكنولوجي | Wego Technology",
     description: "التقنية بين يديك — موبايلات، مودمات 4G، وصيانة في صنعاء",
     images: ["/images/خلفية للتطبيق copy.png"],
   },
@@ -108,8 +108,8 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ElectronicsStore",
-    name: "ويقو  يمن | Wego Yemen",
-    alternateName: "Wego Yemen",
+    name: "ويقو تكنولوجي | Wego Technology",
+    alternateName: "Wego Technology",
     description:
       "أفضل متجر للتقنيات والإلكترونيات في صنعاء، اليمن. موبايلات، مودمات 4G، إكسسوارات وصيانة احترافية.",
     url: "https://wegoyemen.com",
