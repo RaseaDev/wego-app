@@ -18,7 +18,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wegoyemen.com"),
-  title: "ويجو يمن | Wego Yemen — موبايلات، مودمات 4G، إكسسوارات وصيانة",
+  title: {
+    default: "ويجو يمن | Wego Yemen — موبايلات، مودمات 4G، إكسسوارات وصيانة",
+    template: "%s | ويجو يمن - Wego Yemen",
+  },
   description:
     "ويجو يمن — أفضل متجر للتقنيات والإلكترونيات في صنعاء، اليمن. موبايلات، مودمات 4G، إكسسوارات، وخدمات صيانة احترافية. حمّل تطبيقنا الآن!",
   keywords: [
@@ -32,14 +35,33 @@ export const metadata: Metadata = {
     "Wego 4G",
     "Yemen electronics",
     "Sanaa tech store",
+    "أفضل متجر إلكترونيات في اليمن",
+    "هواتف ذكية صنعاء"
   ],
   authors: [{ name: "Wego Yemen", url: "https://wegoyemen.com" }],
   creator: "Wego Yemen",
   publisher: "Wego Yemen",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  other: {
+    "geo.region": "YE-SA",
+    "geo.placename": "Sanaa",
+    "geo.position": "15.3694;44.1910",
+    "ICBM": "15.3694, 44.1910",
+  },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
@@ -49,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "ويجو يمن | Wego Yemen",
     title: "ويجو يمن | Wego Yemen — التقنية بين يديك",
     description:
-      "أفضل متجر للتقنيات والإلكترونيات في اليمن. حمّل تطبيق ويجو الآن.",
+      "أفضل متجر للتقنيات والإلكترونيات في اليمن. حمّل تطبيق ويجو الآن لاكتشاف أحدث الموبايلات.",
     images: [
       {
         url: "/images/شعار ويجو للتطبيق (1).png",
@@ -103,6 +125,7 @@ export default function RootLayout({
       latitude: "15.3694",
       longitude: "44.1910",
     },
+    hasMap: "https://maps.google.com/?q=15.3694,44.1910",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [
@@ -116,7 +139,13 @@ export default function RootLayout({
       opens: "08:00",
       closes: "22:00",
     },
-    hasMap: "https://maps.google.com/?q=Sanaa,+Yemen",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+967-783-313-335",
+      contactType: "customer service",
+      areaServed: "YE",
+      availableLanguage: ["Arabic", "English"],
+    },
     sameAs: ["https://www.facebook.com/wegoyemen"],
     image: "https://wegoyemen.com/images/شعار ويجو للتطبيق (1).png",
     priceRange: "$$",

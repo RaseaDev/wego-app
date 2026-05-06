@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <StatsBar />
+        {/* <StatsBar /> */}
         <FeaturesStrip />
         {/* <ProductsGrid /> */}
         {/* <ServicesSection /> */}

@@ -79,7 +79,7 @@ export default function Footer() {
             <div style={{ display: "flex", gap: "0.6rem", marginTop: "1.25rem" }}>
               <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"
                 style={{ width: 38, height: 38, borderRadius: "0.6rem", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#8AA4B4", textDecoration: "none", transition: "all 0.2s" }}>
-                <Globe size={17} />
+                <Image src="/icons/facebook-boxed-svgrepo-com.svg" alt="Facebook" width={17} height={17} />
               </a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                 style={{ width: 38, height: 38, borderRadius: "0.6rem", background: "rgba(76,175,80,0.15)", border: "1px solid rgba(76,175,80,0.25)", display: "flex", alignItems: "center", justifyContent: "center", color: "#4CAF50", textDecoration: "none" }}>

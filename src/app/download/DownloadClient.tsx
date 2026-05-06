@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -47,39 +47,51 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
     }
   }, [device, apkUrl]);
 
+  // Compute absolute URL for QR Code
+  const [qrUrl, setQrUrl] = useState("");
+  useEffect(() => {
+    if (apkUrl.startsWith("/")) {
+      setQrUrl(`${window.location.origin}${apkUrl}`);
+    } else {
+      setQrUrl(apkUrl);
+    }
+  }, [apkUrl]);
+
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#0A0F1E] pt-24 pb-16">
-        {/* Background */}
-        <div className="fixed inset-0 tech-grid opacity-20 pointer-events-none" />
-        <div className="fixed top-1/4 right-1/4 w-96 h-96 bg-brand-cyan/5 rounded-full blur-[120px] pointer-events-none" />
+      <main style={{ minHeight: "100vh", background: "#F8FCFF", paddingTop: "8rem", paddingBottom: "4rem", position: "relative", overflow: "hidden" }}>
+        
+        {/* Background Decoration */}
+        <div style={{ position: "absolute", top: "-10%", right: "-10%", width: "50%", height: "50%", background: "radial-gradient(circle, rgba(0,168,214,0.08) 0%, transparent 70%)", zIndex: 0 }} />
+        <div style={{ position: "absolute", bottom: "-10%", left: "-10%", width: "50%", height: "50%", background: "radial-gradient(circle, rgba(0,71,255,0.05) 0%, transparent 70%)", zIndex: 0 }} />
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 900, margin: "0 auto", padding: "0 1.5rem" }}>
+          
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            style={{ textAlign: "center", marginBottom: "3rem" }}
           >
-            <Link href="/" className="inline-flex items-center gap-3 mb-6">
+            <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem", textDecoration: "none" }}>
               <Image
                 src="/images/شعار ويجو للتطبيق (1).png"
                 alt="ويجو يمن"
                 width={56}
                 height={56}
-                className="rounded-xl"
+                style={{ borderRadius: "1rem" }}
               />
-              <div className="text-right">
-                <p className="text-white font-bold text-xl">ويجو يمن</p>
-                <p className="text-brand-cyan text-sm">Wego Yemen</p>
+              <div style={{ textAlign: "right" }}>
+                <p style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.2rem", lineHeight: 1.2 }}>ويجو يمن</p>
+                <p style={{ color: "#00A8D6", fontSize: "0.85rem", fontWeight: 600 }}>Wego Yemen</p>
               </div>
             </Link>
-            <h1 className="text-3xl md:text-4xl font-black text-white mb-3">
+            <h1 style={{ fontSize: "clamp(1.8rem, 5vw, 2.5rem)", fontWeight: 900, color: "#0D2235", marginBottom: "0.75rem" }}>
               تحميل التطبيق
             </h1>
-            <p className="text-slate-400">
+            <p style={{ color: "#4A6878", fontWeight: 500 }}>
               الإصدار {version} • حجم {size}
             </p>
           </motion.div>
@@ -90,15 +102,15 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="glass-card rounded-2xl p-8 mb-8 text-center border-brand-cyan/30"
+              style={{ background: "#fff", borderRadius: "1.5rem", padding: "2.5rem", marginBottom: "2rem", textAlign: "center", boxShadow: "0 10px 40px rgba(0,120,180,0.08)", border: "1px solid #DFF1FA" }}
             >
-              <div className="w-16 h-16 bg-green-500/20 border border-green-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle size={28} className="text-green-400" />
+              <div style={{ width: 64, height: 64, background: "#E8FAF0", border: "1px solid #A8E6C0", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.5rem" }}>
+                <CheckCircle size={28} color="#1A8C45" />
               </div>
-              <h2 className="text-white font-bold text-xl mb-2">
+              <h2 style={{ color: "#0D2235", fontWeight: 800, fontSize: "1.25rem", marginBottom: "0.5rem" }}>
                 🎉 يبدأ التحميل تلقائياً...
               </h2>
-              <p className="text-slate-400 mb-6">
+              <p style={{ color: "#4A6878", marginBottom: "1.5rem" }}>
                 تم اكتشاف جهازك (أندرويد). يبدأ التحميل خلال ثوانٍ.
               </p>
               <motion.a
@@ -106,10 +118,10 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
                 download="wego-settings.apk"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="btn-primary text-base py-4 px-10 inline-flex mx-auto"
-                id="android-download-btn"
+                className="btn-primary"
+                style={{ display: "inline-flex", padding: "1rem 2.5rem", fontSize: "1rem" }}
               >
-                <Download size={20} />
+                <Download size={20} style={{ marginLeft: "0.5rem" }} />
                 <span>تحميل APK مباشرة</span>
               </motion.a>
             </motion.div>
@@ -120,24 +132,23 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="glass-card rounded-2xl p-8 mb-8 text-center border-amber-500/30"
+              style={{ background: "#fff", borderRadius: "1.5rem", padding: "2.5rem", marginBottom: "2rem", textAlign: "center", boxShadow: "0 10px 40px rgba(0,120,180,0.08)", border: "1px solid #FFE8A1" }}
             >
-              <div className="w-16 h-16 bg-amber-500/20 border border-amber-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <AlertCircle size={28} className="text-amber-400" />
+              <div style={{ width: 64, height: 64, background: "#FFF4D4", border: "1px solid #FFE8A1", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.5rem" }}>
+                <AlertCircle size={28} color="#FF9900" />
               </div>
-              <h2 className="text-white font-bold text-xl mb-2">
+              <h2 style={{ color: "#0D2235", fontWeight: 800, fontSize: "1.25rem", marginBottom: "0.5rem" }}>
                 iOS غير مدعوم حالياً
               </h2>
-              <p className="text-slate-400 mb-6 max-w-md mx-auto">
-                التطبيق متاح حالياً لأجهزة أندرويد فقط. تواصل معنا عبر واتساب
-                لأي استفسار.
+              <p style={{ color: "#4A6878", marginBottom: "1.5rem", maxWidth: 400, margin: "0 auto 1.5rem" }}>
+                التطبيق متاح حالياً لأجهزة أندرويد فقط. تواصل معنا عبر واتساب لأي استفسار.
               </p>
               <motion.a
                 href={`${WHATSAPP_URL}?text=مرحباً، أريد الاستفسار عن تطبيق ويجو يمن لنظام iOS`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-green-500/20 border border-green-500/30 text-green-400 rounded-xl font-bold hover:bg-green-500/30 transition-all"
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "1rem 2rem", background: "#E8FAF0", border: "1px solid #A8E6C0", color: "#1A8C45", borderRadius: "1rem", fontWeight: 700, textDecoration: "none" }}
               >
                 <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={20} height={20} />
                 <span>تواصل عبر واتساب</span>
@@ -150,15 +161,25 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="glass-card rounded-2xl p-8 mb-8"
+              style={{ background: "#fff", borderRadius: "1.5rem", padding: "2.5rem", marginBottom: "2rem", boxShadow: "0 10px 40px rgba(0,120,180,0.08)", border: "1px solid #DFF1FA" }}
             >
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                {/* QR Placeholder */}
-                <div className="flex-shrink-0 text-center">
-                  <div className="w-40 h-40 bg-white rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <QrCode size={96} className="text-[#0A0F1E]" />
+              <div className="desktop-layout" style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+                
+                {/* QR Code */}
+                <div style={{ flexShrink: 0, textAlign: "center" }}>
+                  <div style={{ width: 140, height: 140, background: "#fff", border: "1px solid #C5E8F5", borderRadius: "1rem", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 0.75rem", overflow: "hidden" }}>
+                    {qrUrl ? (
+                      <img 
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrUrl)}&color=0D2235`} 
+                        alt="QR Code لـ تحميل التطبيق" 
+                        style={{ width: "100%", height: "100%", objectFit: "contain", padding: "0.5rem" }} 
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div style={{ width: 60, height: 60, border: "3px solid #E0F6FD", borderTopColor: "#00A8D6", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
+                    )}
                   </div>
-                  <p className="text-slate-400 text-sm">
+                  <p style={{ color: "#4A6878", fontSize: "0.85rem", fontWeight: 600 }}>
                     امسح بكاميرا هاتفك
                     <br />
                     الأندرويد للتحميل
@@ -166,33 +187,32 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
                 </div>
 
                 {/* Divider */}
-                <div className="hidden md:flex flex-col items-center gap-2">
-                  <div className="w-px h-20 bg-brand-cyan/20" />
-                  <span className="text-slate-500 text-sm">أو</span>
-                  <div className="w-px h-20 bg-brand-cyan/20" />
+                <div className="desktop-divider" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
+                  <div style={{ width: 1, height: 60, background: "#C5E8F5" }} />
+                  <span style={{ color: "#8AA4B4", fontSize: "0.85rem", fontWeight: 600 }}>أو</span>
+                  <div style={{ width: 1, height: 60, background: "#C5E8F5" }} />
                 </div>
 
                 {/* Download options */}
-                <div className="flex-1 text-center md:text-right">
-                  <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                    <Monitor size={18} className="text-brand-cyan" />
-                    <p className="text-white font-bold">
+                <div style={{ flex: 1, textAlign: "right" }} className="desktop-text-center">
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }} className="desktop-flex-center">
+                    <Monitor size={20} color="#00A8D6" />
+                    <p style={{ color: "#0D2235", fontWeight: 800, fontSize: "1.1rem" }}>
                       تحميل مباشر على الحاسوب
                     </p>
                   </div>
-                  <p className="text-slate-400 text-sm mb-5">
-                    حمّل الملف ثم انقله إلى هاتفك عبر كابل USB أو واتساب أو
-                    البلوتوث
+                  <p style={{ color: "#4A6878", fontSize: "0.9rem", marginBottom: "1.5rem", lineHeight: 1.6 }}>
+                    حمّل الملف ثم انقله إلى هاتفك عبر كابل USB أو واتساب أو البلوتوث
                   </p>
                   <motion.a
                     href={apkUrl}
                     download="wego-settings.apk"
-                    whileHover={{ scale: 1.03, boxShadow: "0 0 30px rgba(0,191,255,0.4)" }}
+                    whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
-                    className="btn-primary inline-flex text-base py-4 px-8 mb-3"
-                    id="desktop-download-btn"
+                    className="btn-primary"
+                    style={{ display: "inline-flex", padding: "0.9rem 2rem", fontSize: "0.95rem" }}
                   >
-                    <Download size={20} />
+                    <Download size={18} style={{ marginLeft: "0.5rem" }} />
                     <span>تحميل APK ({size})</span>
                   </motion.a>
                 </div>
@@ -205,38 +225,36 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="glass-card rounded-2xl p-6"
+            style={{ background: "#fff", borderRadius: "1.5rem", padding: "2.5rem", boxShadow: "0 10px 40px rgba(0,120,180,0.08)", border: "1px solid #DFF1FA" }}
           >
-            <h3 className="text-white font-bold text-lg mb-6 text-center">
+            <h3 style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.2rem", marginBottom: "2rem", textAlign: "center" }}>
               خطوات التثبيت
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.5rem" }}>
               {installSteps.map(({ icon: Icon, title, desc }, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center mx-auto mb-3">
-                    <Icon size={20} className="text-brand-cyan" />
+                <div key={i} style={{ textAlign: "center" }}>
+                  <div style={{ width: 56, height: 56, borderRadius: "1rem", background: "#E0F6FD", border: "1px solid #C5E8F5", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 0.75rem", position: "relative" }}>
+                    <Icon size={24} color="#00A8D6" />
+                    <div style={{ position: "absolute", top: -8, right: -8, width: 24, height: 24, borderRadius: "50%", background: "#00A8D6", color: "#fff", fontSize: "0.75rem", fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #fff" }}>
+                      {i + 1}
+                    </div>
                   </div>
-                  <div className="w-6 h-6 rounded-full bg-brand-cyan text-[#0A0F1E] text-xs font-black flex items-center justify-center mx-auto mb-2">
-                    {i + 1}
-                  </div>
-                  <p className="text-white text-sm font-semibold mb-1">{title}</p>
-                  <p className="text-slate-400 text-xs leading-relaxed">{desc}</p>
+                  <p style={{ color: "#0D2235", fontSize: "0.95rem", fontWeight: 800, marginBottom: "0.25rem" }}>{title}</p>
+                  <p style={{ color: "#4A6878", fontSize: "0.8rem", lineHeight: 1.5 }}>{desc}</p>
                 </div>
               ))}
             </div>
 
             {/* Help */}
-            <div className="mt-6 pt-5 border-t border-white/5 text-center">
-              <p className="text-slate-500 text-sm mb-2">
-                تحتاج مساعدة؟
-              </p>
+            <div style={{ marginTop: "2.5rem", paddingTop: "1.5rem", borderTop: "1px dashed #C5E8F5", textAlign: "center" }}>
+              <p style={{ color: "#8AA4B4", fontSize: "0.85rem", marginBottom: "0.5rem" }}>تحتاج مساعدة؟</p>
               <a
                 href={`${WHATSAPP_URL}?text=مرحباً، أحتاج مساعدة في تثبيت تطبيق ويجو`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-green-400 text-sm font-semibold hover:underline"
+                style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#1A8C45", fontSize: "0.9rem", fontWeight: 700, textDecoration: "none" }}
               >
-                <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={14} height={14} />
+                <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={16} height={16} />
                 <span>تواصل معنا عبر واتساب — نحن هنا للمساعدة</span>
               </a>
             </div>
@@ -247,11 +265,11 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="text-center mt-8"
+            style={{ textAlign: "center", marginTop: "2rem" }}
           >
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-slate-400 hover:text-brand-cyan transition-colors text-sm"
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#4A6878", textDecoration: "none", fontWeight: 600, fontSize: "0.9rem" }}
             >
               <ArrowRight size={16} />
               <span>العودة للرئيسية</span>
@@ -259,6 +277,19 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
           </motion.div>
         </div>
       </main>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .desktop-layout { flex-direction: column !important; text-align: center !important; }
+          .desktop-divider { display: none !important; }
+          .desktop-text-center { text-align: center !important; }
+          .desktop-flex-center { justify-content: center !important; }
+          .steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 480px) {
+          .steps-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <Footer />
     </>
   );

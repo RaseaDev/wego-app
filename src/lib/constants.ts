@@ -3,9 +3,8 @@
 // =============================================
 
 // APK Distribution
-export const APK_URL = "/wego-settings.apk"; // Local public folder - update to GitHub Releases URL after upload
-export const APK_GITHUB_URL =
-  "https://github.com/RaseaDev/wego-website/releases/latest/download/wego-settings.apk";
+export const APK_URL = "/wego-settings.apk";
+export const APK_GITHUB_URL = "https://github.com/RaseaDev/wego-app/releases/download/v8.9/wego_settings_v89.apk";
 export const APK_VERSION = "v8.9";
 export const APK_SIZE = "~57 MB";
 

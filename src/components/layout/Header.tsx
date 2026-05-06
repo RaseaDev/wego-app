@@ -138,7 +138,7 @@ export default function Header() {
                 <Image src="/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp" width={17} height={17} />
               </a>
               <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" style={socialIconStyle}>
-                <Globe size={17} />
+                <Image src="/icons/facebook-boxed-svgrepo-com.svg" alt="Facebook" width={17} height={17} />
               </a>
               <a href={PHONE_TEL} style={socialIconStyle}>
                 <Phone size={17} />

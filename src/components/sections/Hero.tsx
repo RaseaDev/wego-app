@@ -83,22 +83,22 @@ export default function Hero() {
               <span style={{ color: "#8AA4B4", fontSize: "0.9rem" }}>كل ما تحتاجه في مكان واحد — صنعاء، اليمن</span>
             </motion.p>
 
-            <motion.div variants={item} style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", justifyContent: "flex-end" }}>
+            <motion.div variants={item} style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", }}>
               <a href="/download" className="btn-primary" style={{ fontSize: "1rem", padding: "0.9rem 1.75rem" }} id="hero-download">
                 <Download size={18} />
                 تحميل التطبيق مجاناً
               </a>
-              <button
+              {/* <button
                 onClick={() => document.querySelector("#products")?.scrollIntoView({ behavior: "smooth" })}
                 className="btn-secondary"
                 style={{ fontSize: "1rem", padding: "0.9rem 1.75rem" }}
               >
                 <span>استعرض المنتجات</span>
                 <ArrowLeft size={18} />
-              </button>
+              </button> */}
             </motion.div>
 
-            <motion.div variants={item} style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", marginTop: "1.25rem", justifyContent: "flex-end" }}>
+            {/* <motion.div variants={item} style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", marginTop: "1.25rem", justifyContent: "flex-end" }}>
               {[
                 { label: "+1000 عميل", color: "#0082A8", bg: "#E0F6FD" },
                 { label: "+5 سنوات خبرة", color: "#7DC400", bg: "#F0FAE0" },
@@ -112,7 +112,7 @@ export default function Hero() {
                   {b.label}
                 </span>
               ))}
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* ── Visual (LEFT column in RTL — second in DOM) ── */}
