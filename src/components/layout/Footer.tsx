@@ -49,7 +49,7 @@ export default function Footer() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1rem" }}>
               <div style={{ width: 44, height: 44, borderRadius: 10, overflow: "hidden" }}>
-                <Image src="/images/شعار ويجو للتطبيق (1).png" alt="ويقو تكنولوجي" width={44} height={44} style={{ objectFit: "cover" }} />
+                <Image src="/images/شعار تطبيق ويجو تكنلوجي.jpeg" alt="ويقو تكنولوجي" width={44} height={44} style={{ objectFit: "cover" }} />
               </div>
               <div>
                 <p style={{ fontWeight: 800, color: "#fff", fontSize: "1rem" }}>ويقو تكنولوجي</p>

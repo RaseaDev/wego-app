@@ -74,7 +74,7 @@ export const metadata: Metadata = {
       "أفضل متجر للتقنيات والإلكترونيات في اليمن. حمّل تطبيق ويقو تكنولوجي الآن لاكتشاف أحدث الموبايلات.",
     images: [
       {
-        url: "/images/شعار ويجو للتطبيق (1).png",
+        url: "/images/شعار تطبيق ويجو تكنلوجي.jpeg",
         width: 512,
         height: 512,
         alt: "شعار ويقو تكنولوجي",
@@ -85,11 +85,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ويقو تكنولوجي | Wego Technology",
     description: "التقنية بين يديك — موبايلات، مودمات 4G، وصيانة في صنعاء",
-    images: ["/images/خلفية للتطبيق copy.png"],
+    images: ["/images/شعار تطبيق ويجو تكنلوجي.jpeg"],
   },
   icons: {
-    icon: "/images/شعار ويجو للتطبيق (1).png",
-    apple: "/images/شعار ويجو للتطبيق (1).png",
+    icon: "/images/شعار تطبيق ويجو تكنلوجي.jpeg",
+    apple: "/images/شعار تطبيق ويجو تكنلوجي.jpeg",
   },
   alternates: {
     canonical: "https://wegoyemen.com",
@@ -147,7 +147,7 @@ export default function RootLayout({
       availableLanguage: ["Arabic", "English"],
     },
     sameAs: ["https://www.facebook.com/wegoyemen"],
-    image: "https://wegoyemen.com/images/شعار ويجو للتطبيق (1).png",
+    image: "https://wegoyemen.com/images/شعار تطبيق ويجو تكنلوجي.jpeg",
     priceRange: "$$",
     currenciesAccepted: "YER",
     paymentAccepted: "Cash",

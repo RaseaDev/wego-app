@@ -145,7 +145,7 @@ export default function Hero() {
               >
                 <div style={{ width: 160, height: 160, borderRadius: "1rem", overflow: "hidden", margin: "0 auto 1rem" }}>
                   <Image
-                    src="/images/خلفية للتطبيق copy.png"
+                    src="/images/شعار تطبيق ويجو تكنلوجي.jpeg"
                     alt="تطبيق ويقو تكنولوجي"
                     width={160}
                     height={160}

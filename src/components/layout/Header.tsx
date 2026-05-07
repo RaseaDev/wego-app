@@ -84,7 +84,7 @@ export default function Header() {
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
             <div style={{ width: 42, height: 42, borderRadius: 10, overflow: "hidden", flexShrink: 0 }}>
               <Image
-                src="/images/شعار ويجو للتطبيق (1).png"
+                src="/images/شعار تطبيق ويجو تكنلوجي.jpeg"
                 alt="ويقو تكنولوجي"
                 width={42}
                 height={42}

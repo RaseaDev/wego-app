@@ -77,15 +77,15 @@ export default function DownloadClient({ device, apkUrl, version, size }: Props)
           >
             <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem", textDecoration: "none" }}>
               <Image
-                src="/images/شعار ويجو للتطبيق (1).png"
-                alt="ويجو يمن"
+                src="/images/شعار تطبيق ويجو تكنلوجي.jpeg"
+                alt="ويقو تكنولوجي"
                 width={56}
                 height={56}
                 style={{ borderRadius: "1rem" }}
               />
               <div style={{ textAlign: "right" }}>
-                <p style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.2rem", lineHeight: 1.2 }}>ويجو يمن</p>
-                <p style={{ color: "#00A8D6", fontSize: "0.85rem", fontWeight: 600 }}>Wego Yemen</p>
+                <p style={{ color: "#0D2235", fontWeight: 900, fontSize: "1.2rem", lineHeight: 1.2 }}>ويقو تكنولوجي</p>
+                <p style={{ color: "#00A8D6", fontSize: "0.85rem", fontWeight: 600 }}>Wego Technology</p>
               </div>
             </Link>
             <h1 style={{ fontSize: "clamp(1.8rem, 5vw, 2.5rem)", fontWeight: 900, color: "#0D2235", marginBottom: "0.75rem" }}>

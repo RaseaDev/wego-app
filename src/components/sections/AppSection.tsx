@@ -94,7 +94,7 @@ export default function AppSection() {
 
             {/* Help */}
             <div style={{ textAlign: "center" }}>
-              <a href={`${WHATSAPP_URL}?text=مرحباً، أحتاج مساعدة في تثبيت تطبيق ويجو`}
+              <a href={`${WHATSAPP_URL}?text=مرحباً، أحتاج مساعدة في تثبيت تطبيق ويقو`}
                 target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#1A8C45", fontWeight: 700, fontSize: "0.88rem", textDecoration: "none" }}
               >
@@ -116,9 +116,9 @@ export default function AppSection() {
                 style={{ background: "#fff", borderRadius: "1.5rem", padding: "2rem", boxShadow: "0 10px 50px rgba(0,120,180,0.18)", border: "1px solid #C5E8F5", textAlign: "center" }}
               >
                 <div style={{ width: 140, height: 140, borderRadius: "1rem", overflow: "hidden", margin: "0 auto 1rem" }}>
-                  <Image src="/images/شعار ويجو للتطبيق (1).png" alt="تطبيق ويجو" width={140} height={140} style={{ objectFit: "cover" }} />
+                  <Image src="/images/شعار تطبيق ويجو تكنلوجي.jpeg" alt="تطبيق ويقو تكنولوجي" width={140} height={140} style={{ objectFit: "cover" }} />
                 </div>
-                <p style={{ fontWeight: 800, color: "#0D2235" }}>تطبيق ويجو يمن</p>
+                <p style={{ fontWeight: 800, color: "#0D2235" }}>تطبيق ويقو تكنولوجي</p>
                 <p style={{ color: "#00A8D6", fontSize: "0.85rem", fontWeight: 600, marginTop: 4 }}>الإصدار {APK_VERSION}</p>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginTop: 10, fontSize: "0.78rem", color: "#8AA4B4" }}>
                   <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#4CAF50", animation: "pulse 2s infinite" }} />
