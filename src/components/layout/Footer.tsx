@@ -12,6 +12,8 @@ const navLinks = [
   { label: "المنتجات", href: "#products" },
   { label: "الخدمات", href: "#services" },
   { label: "تحميل التطبيق", href: "/download" },
+  { label: "الدعم الفني", href: "/support" },
+  { label: "سياسة الخصوصية", href: "/privacy" },
 ];
 
 export default function Footer() {
@@ -117,8 +119,8 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginTop: "2rem", paddingTop: "1.25rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.5rem" }}>
-          <p style={{ color: "#8AA4B4", fontSize: "0.8rem" }}>
-            © 2025 ويقو تكنولوجي — جميع الحقوق محفوظة
+          <p style={{ color: "#8AA4B4", fontSize: "0.8rem" }} suppressHydrationWarning>
+            © {new Date().getFullYear()} ويقو تكنولوجي — جميع الحقوق محفوظة
           </p>
           {/* <p style={{ color: "#8AA4B4", fontSize: "0.8rem" }}>
             صُنع بـ ❤️ في اليمن
